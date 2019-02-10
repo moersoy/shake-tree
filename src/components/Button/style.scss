@@ -1,0 +1,54 @@
+@import '../../app.scss';
+
+$shake-color: #a77600;
+
+.shake-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+  display: block;
+  width: 70px;
+  height: 70px;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 70px;
+  letter-spacing: -1px;
+  color: #f6f0bf;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba($shake-color, .5);
+  background: $shake-color;
+  outline: none;
+  cursor: pointer;
+  -webkit-animation: pulse 1.5s infinite;
+  animation: pulse 1.5s infinite;
+
+  &:hover {
+    -webkit-animation: none;
+    animation: none;
+  }
+
+  &.clicked {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    @include transform(scale(.9));
+  }
+
+  70% {
+    @include transform(scale(1));
+    box-shadow: 0 0 0 50px rgba($shake-color, 0);
+  }
+
+  100% {
+    @include transform(scale(.9));
+    box-shadow: 0 0 0 0 rgba($shake-color, 0);
+  }
+}

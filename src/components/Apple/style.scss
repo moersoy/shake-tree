@@ -1,0 +1,42 @@
+@import '../../app.scss';
+
+
+.apple-out {
+  visibility: hidden;
+  opacity: 0;
+  transition-property: visibility, opacity;
+  transition-duration: 0s, 1.0s;
+  transition-timing-function: ease, linear;
+  transition-delay: 2.5s;
+}
+
+.shake-apples {
+  animation: shake-apples .5s;
+  transform: translate3d(200px, 174px, 0);
+  backface-visibility: hidden;
+  animation-iteration-count: 6;
+}
+
+
+.drop-apple {
+  transition-timing-function: linear;
+}
+
+
+@keyframes apple-out {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+@keyframes shake-apples {
+  40%,
+  60% {
+    @include translate3d(204px, 174px, 0);
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "plugins": [
+    "@babel/transform-runtime",
+    "@babel/proposal-class-properties"
+  ],
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": false
+      }
+    ],
+    "@babel/react"
+  ],
+  "env": {
+    "production": {
+      "compact": false,
+      "only": [
+        "src"
+      ],
+      "plugins": [
+        "transform-react-remove-prop-types",
+        "@babel/transform-react-inline-elements",
+        "@babel/transform-react-constant-elements"
+      ]
+    },
+    "development" : {
+      "compact": false
+    }
+  }
+}

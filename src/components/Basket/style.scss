@@ -1,0 +1,11 @@
+.basket-apple {
+  visibility: hidden;
+  opacity: 0;
+  transition-property: visibility, opacity;
+  transition-duration: .5s, 1.5s;
+  transition-timing-function: ease, linear;
+  &.added {
+    visibility: visible;
+    opacity: 1;
+  }
+}
