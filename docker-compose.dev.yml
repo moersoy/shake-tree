@@ -1,0 +1,26 @@
+# Default compose file for development.
+# Should be used directly only in development.
+
+version: "3.6"
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: ./config/docker/dev/Dockerfile
+      args:
+        NODE_ENV: "development"
+    container_name: shake-tree-dev
+    command: yarn start
+    volumes:
+      - .:/code
+      - /code/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - webnet
+    env_file: ./config/.env
+    environment:
+      HOST: "0.0.0.0"
+
+networks:
+  webnet:

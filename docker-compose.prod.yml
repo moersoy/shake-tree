@@ -1,0 +1,25 @@
+version: "3.6"
+
+services:
+  prod:
+    build:
+      context: .
+      dockerfile: ./config/docker/prod/Dockerfile
+      args:
+        NODE_ENV: "production"
+    container_name: shake-tree-prod
+    restart: always
+    ports:
+      - "3000:3000"
+    command:
+      "npm run start:production"
+
+  nginx:
+    image: nginx:1.13
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - prod

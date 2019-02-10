@@ -19,7 +19,11 @@
 
 
 .drop-apple {
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
   transition-timing-function: linear;
+  backface-visibility: hidden;
 }
 
 
