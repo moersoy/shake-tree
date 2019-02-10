@@ -871,7 +871,7 @@ function Landscape({ children }) {
         />
       </defs>
       <g
-        id="Drawn-beautiful-landscapes-vector-material-04"
+        id="beautiful-landscape"
         stroke="none"
         strokeWidth="1"
         fill="none"
