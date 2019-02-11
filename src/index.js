@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import App from './containers/App';
 import configureStore from './configureStore';
 
+import './style/global.scss';
+
 const store = configureStore();
 const MOUNT_NODE = document.getElementById('app');
 
